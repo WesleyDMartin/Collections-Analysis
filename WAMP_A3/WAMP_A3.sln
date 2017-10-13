@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WAMP_A3", "WAMP_A3\WAMP_A3.csproj", "{5875F913-CB73-403B-8363-C9EA127EA611}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5875F913-CB73-403B-8363-C9EA127EA611}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5875F913-CB73-403B-8363-C9EA127EA611}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5875F913-CB73-403B-8363-C9EA127EA611}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5875F913-CB73-403B-8363-C9EA127EA611}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {62CE4AF8-428F-4ED4-8826-39579792D4B5}
+	EndGlobalSection
+EndGlobal
