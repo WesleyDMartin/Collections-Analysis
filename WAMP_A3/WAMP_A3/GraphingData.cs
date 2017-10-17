@@ -59,9 +59,8 @@ namespace WAMP_A3
             chart.SaveImage(fileName + ".png", ChartImageFormat.Png);
         }
 
-        static Series createSeries(ref Chart chart, string name, int[] xvals, double[] yvals)
+        static void createSeries(ref Chart chart, string name, int[] xvals, double[] yvals)
         {
-
             chart.Legends.Add(new Legend(name));
             chart.Legends[name].Docking = Docking.Bottom;
             var series = new Series();
@@ -73,8 +72,6 @@ namespace WAMP_A3
 
             chart.Series[name].Legend = name;
             chart.Series[name].IsVisibleInLegend = true;
-
-            return series;
         }
 
     }
