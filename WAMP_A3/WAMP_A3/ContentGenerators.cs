@@ -11,7 +11,7 @@ namespace WAMP_A3
     class ContentGenerators
     {
         static public Random rand = new Random();
-        static public void listTimes(ref double[,] times)
+        static public void listTimes(ref double[,] times, int numOfElements)
         {
             Stopwatch watch = new Stopwatch();
             List<int> list = new List<int>();
@@ -21,7 +21,7 @@ namespace WAMP_A3
             {
                 list.Clear();
                 watch.Restart();
-                for (int i = 0; i < Constants.numOfElements; i++)
+                for (int i = 0; i < numOfElements; i++)
                 {
                     list.Add(i);
                 }
@@ -47,12 +47,12 @@ namespace WAMP_A3
                 watch.Restart();
                 for (int i = 0; i < Constants.numOfSearches; i++)
                 {
-                    list.Contains(rand.Next(Constants.numOfElements));
+                    list.Contains(rand.Next(numOfElements));
                 }
                 times[(int)Constants.TestTypes.Search, k] = watch.Elapsed.TotalMilliseconds;
             }
         }
-        static public void arrayListTimes(ref double[,] times)
+        static public void arrayListTimes(ref double[,] times, int numOfElements)
         {
             Stopwatch watch = new Stopwatch();
             ArrayList list = new ArrayList();
@@ -62,7 +62,7 @@ namespace WAMP_A3
             {
                 list.Clear();
                 watch.Restart();
-                for (int i = 0; i < Constants.numOfElements; i++)
+                for (int i = 0; i < numOfElements; i++)
                 {
                     list.Add(i);
                 }
@@ -88,12 +88,12 @@ namespace WAMP_A3
                 watch.Restart();
                 for (int i = 0; i < Constants.numOfSearches; i++)
                 {
-                    list.Contains(rand.Next(Constants.numOfElements));
+                    list.Contains(rand.Next(numOfElements));
                 }
                 times[(int)Constants.TestTypes.Search, k] = watch.Elapsed.TotalMilliseconds;
             }
         }
-        static public void dictionaryTimes(ref double[,] times)
+        static public void dictionaryTimes(ref double[,] times, int numOfElements)
         {
             Stopwatch watch = new Stopwatch();
             Dictionary<int, int> list = new Dictionary<int, int>();
@@ -103,7 +103,7 @@ namespace WAMP_A3
             {
                 list.Clear();
                 watch.Restart();
-                for (int i = 0; i < Constants.numOfElements; i++)
+                for (int i = 0; i < numOfElements; i++)
                 {
                     list.Add(i, i);
                 }
@@ -129,12 +129,12 @@ namespace WAMP_A3
                 watch.Restart();
                 for (int i = 0; i < Constants.numOfSearches; i++)
                 {
-                    list.ContainsValue(rand.Next(Constants.numOfElements));
+                    list.ContainsValue(rand.Next(numOfElements));
                 }
                 times[(int)Constants.TestTypes.Search, k] = watch.Elapsed.TotalMilliseconds;
             }
         }
-        static public void hashTableTimes(ref double[,] times)
+        static public void hashTableTimes(ref double[,] times, int numOfElements)
         {
             Stopwatch watch = new Stopwatch();
             Hashtable list = new Hashtable();
@@ -144,7 +144,7 @@ namespace WAMP_A3
             {
                 list.Clear();
                 watch.Restart();
-                for (int i = 0; i < Constants.numOfElements; i++)
+                for (int i = 0; i < numOfElements; i++)
                 {
                     list.Add(i, i);
                 }
@@ -171,7 +171,7 @@ namespace WAMP_A3
                 object x = 0;
                 for (int i = 0; i < Constants.numOfSearches; i++)
                 {
-                    x = list[rand.Next(Constants.numOfElements)];
+                    x = list[rand.Next(numOfElements)];
                 }
                 times[(int)Constants.TestTypes.Search, k] = watch.Elapsed.TotalMilliseconds;
             }
