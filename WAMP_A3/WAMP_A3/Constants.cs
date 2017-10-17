@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WAMP_A3
+﻿namespace WAMP_A3
 {
     class Constants
     {
-        static public int numOfCollections = 4;
-        static public int numOfTests = 5;
-        static public int typesOfTests = 3;
-        static public int numOfElements = 1000000;
-        static public int numOfSearches = 10;
-        static public int numOfXPoints = 6;
+        static public int numOfCollections  = 4;
+        static public int numOfTests        = 5;
+        static public int typesOfTests      = 3;
+        static public int numOfElements     = 1000000;
+        static public int numOfSearches     = 100;
+        static public int numOfXPoints      = 6;
         public enum TestTypes
         {
             Insert = 0,

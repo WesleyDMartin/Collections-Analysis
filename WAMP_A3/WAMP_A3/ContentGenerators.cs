@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Collections;
-using System.Text;
+using System.Collections.Generic;
 using System.Diagnostics;
-using System.Threading.Tasks;
 
 namespace WAMP_A3
 {
@@ -32,11 +29,11 @@ namespace WAMP_A3
 
             for (int k = 0; k < Constants.numOfTests; k++)
             {
-                int j = 0;
+                int dummy = 0;
                 watch.Restart();
                 foreach (var item in list)
                 {
-                    j++;
+                    dummy = item;
                 }
                 times[(int)Constants.TestTypes.Access, k] = watch.Elapsed.TotalMilliseconds;
             }
@@ -73,11 +70,11 @@ namespace WAMP_A3
 
             for (int k = 0; k < Constants.numOfTests; k++)
             {
-                int j = 0;
+                int dummy = 0;
                 watch.Restart();
                 foreach (var item in list)
                 {
-                    j++;
+                    dummy = (int)item;
                 }
                 times[(int)Constants.TestTypes.Access, k] = watch.Elapsed.TotalMilliseconds;
             }
@@ -126,9 +123,11 @@ namespace WAMP_A3
 
             for (int k = 0; k < Constants.numOfTests; k++)
             {
+                int dummy = 0;
                 watch.Restart();
                 for (int i = 0; i < Constants.numOfSearches; i++)
                 {
+                    dummy = list[rand.Next(numOfElements)];
                     list.ContainsValue(rand.Next(numOfElements));
                 }
                 times[(int)Constants.TestTypes.Search, k] = watch.Elapsed.TotalMilliseconds;

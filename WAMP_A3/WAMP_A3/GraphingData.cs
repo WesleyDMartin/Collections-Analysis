@@ -11,6 +11,7 @@ namespace WAMP_A3
 {
     class GraphingData
     {
+        
         static public void charting(double[,] results, string fileName)
         {
             // set up some data
@@ -30,7 +31,7 @@ namespace WAMP_A3
             var xvals = Constants.varyingElementCount;
 
             // create the chart
-            var chart = new Chart();
+            Chart chart = new Chart();
             chart.Size = new Size(1200, 600);
 
             var chartArea = new ChartArea();
@@ -39,47 +40,42 @@ namespace WAMP_A3
             chartArea.AxisY.MajorGrid.LineColor = Color.LightGray;
             chartArea.AxisX.LabelStyle.Font = new Font("Consolas", 12);
             chartArea.AxisY.LabelStyle.Font = new Font("Consolas", 12);
+            chartArea.AxisX.Title = "Number of Elements in Collection";
+            chartArea.AxisY.Title = "Average Times to Execute " + fileName + " (milliseconds)";
             chartArea.AxisX.IsLogarithmic = true;
             chartArea.AxisY.IsLogarithmic = true;
             chart.ChartAreas.Add(chartArea);
 
-            var series = new Series();
-            series.Name = "Series1";
-            series.ChartType = SeriesChartType.FastLine;
-            series.XValueType = ChartValueType.Double;
-            chart.Series.Add(series);
-
-            var series2 = new Series();
-            series2.Name = "Series2";
-            series2.ChartType = SeriesChartType.FastLine;
-            series2.XValueType = ChartValueType.Double;
-            chart.Series.Add(series2);
-
-            var series3 = new Series();
-            series3.Name = "Series3";
-            series3.ChartType = SeriesChartType.FastLine;
-            series3.XValueType = ChartValueType.Double;
-            chart.Series.Add(series3);
-
-            var series4 = new Series();
-            series4.Name = "Series4";
-            series4.ChartType = SeriesChartType.FastLine;
-            series4.XValueType = ChartValueType.Double;
-            chart.Series.Add(series4);
-
-
-            // bind the datapoints
-            chart.Series["Series1"].Points.DataBindXY(xvals, listVals);
-            chart.Series["Series2"].Points.DataBindXY(xvals, arrayListVals);
-            chart.Series["Series3"].Points.DataBindXY(xvals, dictionaryVals);
-            chart.Series["Series4"].Points.DataBindXY(xvals, hashtableVals);
-
+            // Create the series
+            createSeries(ref chart, "List", xvals, listVals);
+            createSeries(ref chart, "Array List", xvals, arrayListVals);
+            createSeries(ref chart, "Dictionary", xvals, dictionaryVals);
+            createSeries(ref chart, "Hashtable", xvals, hashtableVals);
 
             // draw!
             chart.Invalidate();
 
             // write out a file
-            chart.SaveImage(fileName, ChartImageFormat.Png);
+            chart.SaveImage(fileName + ".png", ChartImageFormat.Png);
         }
+
+        static Series createSeries(ref Chart chart, string name, int[] xvals, double[] yvals)
+        {
+
+            chart.Legends.Add(new Legend(name));
+            chart.Legends[name].Docking = Docking.Bottom;
+            var series = new Series();
+            series.Name = name;
+            series.ChartType = SeriesChartType.FastLine;
+            series.XValueType = ChartValueType.Double;
+            chart.Series.Add(series);
+            chart.Series[name].Points.DataBindXY(xvals, yvals);
+
+            chart.Series[name].Legend = name;
+            chart.Series[name].IsVisibleInLegend = true;
+
+            return series;
+        }
+
     }
 }
