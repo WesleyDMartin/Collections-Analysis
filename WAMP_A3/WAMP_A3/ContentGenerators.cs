@@ -111,11 +111,11 @@ namespace WAMP_A3
 
             for (int k = 0; k < Constants.numOfTests; k++)
             {
-                int j = 0;
+                KeyValuePair<int, int> dummy = new KeyValuePair<int, int>();
                 watch.Restart();
                 foreach (var item in list)
                 {
-                    j++;
+                    dummy = item;
                 }
                 times[(int)Constants.TestTypes.Access, k] = watch.Elapsed.TotalMilliseconds;
             }

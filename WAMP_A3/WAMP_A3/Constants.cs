@@ -23,6 +23,13 @@
             Hashtable = 3
         }
 
-        static public int[] varyingElementCount = new int[] { 10, 100, 1000, 10000, 100000, 1000000};
+        static public int[] varyingElementCount = new int[] 
+        {
+            10,
+            100,
+            1000,
+            10000,
+            100000,
+            1000000 };
     }
 }
