@@ -1,4 +1,13 @@
-﻿using System;
+﻿/*
+*	FILE		  : DisplayTimes.cs
+*   PROJECT		  :	WAMP_A3 - Collection Times Analysis
+*   PROGRAMMER	  : Wes Martin
+*	FIRST VERSION : 13/10/17
+*	DESCRIPTION	  : This file contains the DisplayTimes class, which contains all functionality needed
+*	              : to display the times for the various tests to the screen. 
+*/
+
+using System;
 
 namespace WAMP_A3
 {
