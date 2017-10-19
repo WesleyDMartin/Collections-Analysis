@@ -27,7 +27,7 @@ namespace WAMP_A3
                 searchGraph[(int)Constants.SetTypes.List, i] = ContentGenerators.getAverage(listResults, (int)Constants.TestTypes.Search);
                 accessGraph[(int)Constants.SetTypes.List, i] = ContentGenerators.getAverage(listResults, (int)Constants.TestTypes.Access);
                 insertGraph[(int)Constants.SetTypes.List, i] = ContentGenerators.getAverage(listResults, (int)Constants.TestTypes.Insert);
-                DisplayTimes.showTimes(listResults, "List");
+                //DisplayTimes.showTimes(listResults, "List");
             }
             
           
@@ -39,7 +39,7 @@ namespace WAMP_A3
                 searchGraph[(int)Constants.SetTypes.ArrayList, i] = ContentGenerators.getAverage(arrayListResults, (int)Constants.TestTypes.Search);
                 accessGraph[(int)Constants.SetTypes.ArrayList, i] = ContentGenerators.getAverage(arrayListResults, (int)Constants.TestTypes.Access);
                 insertGraph[(int)Constants.SetTypes.ArrayList, i] = ContentGenerators.getAverage(arrayListResults, (int)Constants.TestTypes.Insert);
-                DisplayTimes.showTimes(arrayListResults, "Array List");
+                //DisplayTimes.showTimes(arrayListResults, "Array List");
             }
 
 
@@ -52,7 +52,7 @@ namespace WAMP_A3
                 searchGraph[(int)Constants.SetTypes.Dictionary, i] = ContentGenerators.getAverage(dictionaryResults, (int)Constants.TestTypes.Search);
                 accessGraph[(int)Constants.SetTypes.Dictionary, i] = ContentGenerators.getAverage(dictionaryResults, (int)Constants.TestTypes.Access);
                 insertGraph[(int)Constants.SetTypes.Dictionary, i] = ContentGenerators.getAverage(dictionaryResults, (int)Constants.TestTypes.Insert);
-                DisplayTimes.showTimes(dictionaryResults, "Dictionary");
+                //DisplayTimes.showTimes(dictionaryResults, "Dictionary");
             }
 
 
@@ -64,7 +64,7 @@ namespace WAMP_A3
                 searchGraph[(int)Constants.SetTypes.Hashtable, i] = ContentGenerators.getAverage(hashTableResults, (int)Constants.TestTypes.Search);
                 accessGraph[(int)Constants.SetTypes.Hashtable, i] = ContentGenerators.getAverage(hashTableResults, (int)Constants.TestTypes.Access);
                 insertGraph[(int)Constants.SetTypes.Hashtable, i] = ContentGenerators.getAverage(hashTableResults, (int)Constants.TestTypes.Insert);
-                DisplayTimes.showTimes(hashTableResults, "Hashtable");
+                //DisplayTimes.showTimes(hashTableResults, "Hashtable");
             }
 
             GraphingData.charting(searchGraph, "100 Searches");

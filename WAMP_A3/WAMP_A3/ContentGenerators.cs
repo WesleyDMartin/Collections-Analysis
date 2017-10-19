@@ -25,7 +25,7 @@ namespace WAMP_A3
             watch.Start();
 
             // Insert
-            for (int k = 0; k < Constants.numOfTests; k++)
+            for (int k = 0; k < Constants.timesToInsert; k++)
             {
                 list.Clear();
                 watch.Restart();
@@ -39,7 +39,7 @@ namespace WAMP_A3
 
 
             // Access
-            for (int k = 0; k < Constants.numOfTests; k++)
+            for (int k = 0; k < Constants.timesToAccess; k++)
             {
                 int x = 0;
                 watch.Restart();
@@ -52,7 +52,7 @@ namespace WAMP_A3
 
 
             // Search
-            for (int k = 0; k < Constants.numOfTests; k++)
+            for (int k = 0; k < Constants.timesToSearch; k++)
             {
                 int x = 0;
                 watch.Restart();
@@ -73,7 +73,7 @@ namespace WAMP_A3
             watch.Start();
 
             // Insert
-            for (int k = 0; k < Constants.numOfTests; k++)
+            for (int k = 0; k < Constants.timesToInsert; k++)
             {
                 list.Clear();
                 watch.Restart();
@@ -87,7 +87,7 @@ namespace WAMP_A3
 
 
             // Access
-            for (int k = 0; k < Constants.numOfTests; k++)
+            for (int k = 0; k < Constants.timesToAccess; k++)
             {
                 int x = 0;
                 watch.Restart();
@@ -100,7 +100,7 @@ namespace WAMP_A3
 
 
             // Search
-            for (int k = 0; k < Constants.numOfTests; k++)
+            for (int k = 0; k < Constants.timesToSearch; k++)
             {
                 int x = 0;
                 watch.Restart();
@@ -123,7 +123,7 @@ namespace WAMP_A3
 
 
             // Insert
-            for (int k = 0; k < Constants.numOfTests; k++)
+            for (int k = 0; k < Constants.timesToInsert; k++)
             {
                 list.Clear();
                 watch.Restart();
@@ -137,7 +137,7 @@ namespace WAMP_A3
 
 
             // Access
-            for (int k = 0; k < Constants.numOfTests; k++)
+            for (int k = 0; k < Constants.timesToAccess; k++)
             {
                 int x = 0;
                 watch.Restart();
@@ -150,7 +150,7 @@ namespace WAMP_A3
 
 
             // Search
-            for (int k = 0; k < Constants.numOfTests; k++)
+            for (int k = 0; k < Constants.timesToSearch; k++)
             {
                 int x = 0;
                 watch.Restart();
@@ -171,7 +171,7 @@ namespace WAMP_A3
             watch.Start();
 
             // Insert
-            for (int k = 0; k < Constants.numOfTests; k++)
+            for (int k = 0; k < Constants.timesToInsert; k++)
             {
                 list.Clear();
                 watch.Restart();
@@ -185,7 +185,7 @@ namespace WAMP_A3
 
 
             // Access
-            for (int k = 0; k < Constants.numOfTests; k++)
+            for (int k = 0; k < Constants.timesToAccess; k++)
             {
                 int x = 0;
                 watch.Restart();
@@ -198,7 +198,7 @@ namespace WAMP_A3
 
 
             // Search
-            for (int k = 0; k < Constants.numOfTests; k++)
+            for (int k = 0; k < Constants.timesToSearch; k++)
             {
                 int x = 0;
                 watch.Restart();

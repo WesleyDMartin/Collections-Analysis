@@ -13,10 +13,13 @@ namespace WAMP_A3
     class Constants
     {
         static public int numOfCollections  = 4;    // The number of different collection types
-        static public int numOfTests        = 10;   // The number of test used on each operation to calculate the average
+        static public int numOfTests        = 100;  // The number of test used on each operation to calculate the average
         static public int typesOfTests      = 3;    // The number of different operations being tested
-        static public int numOfOpExecutes   = 100;  // The number of searches to be performed
-        static public int numOfDataPoints      = 7;    // The number of points in the graph
+        static public int numOfOpExecutes   = 1;    // The number of searches to be performed
+        static public int numOfDataPoints   = 7;    // The number of points in the graph
+        static public int timesToInsert     = 1;
+        static public int timesToAccess     = 100;
+        static public int timesToSearch     = 100;
 
 
         // An enumerated list of the types of tests
