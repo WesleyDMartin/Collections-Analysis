@@ -25,25 +25,18 @@ namespace WAMP_A3
             watch.Start();
 
             // Insert
-            for (int k = 0; k < Constants.timesToInsert; k++)
+            for (int i = 0; i < numOfElements; i++)
             {
-                list.Clear();
-                watch.Restart();
-                for (int i = 0; i < numOfElements; i++)
-                {
-                    list.Add(i);
-                }
-                times[(int)Constants.TestTypes.Insert, k] = watch.Elapsed.TotalMilliseconds;
-
+                list.Add(i);
             }
 
 
             // Access
-            for (int k = 0; k < Constants.timesToAccess; k++)
+            for (int k = 0; k < Constants.sampleSize; k++)
             {
                 int x = 0;
                 watch.Restart();
-                for (int i = 0; i < Constants.numOfOpExecutes; i++)
+                for (int i = 0; i < Constants.timesToAccess; i++)
                 {
                     x = list[rand.Next(numOfElements)];
                 }
@@ -52,11 +45,11 @@ namespace WAMP_A3
 
 
             // Search
-            for (int k = 0; k < Constants.timesToSearch; k++)
+            for (int k = 0; k < Constants.sampleSize; k++)
             {
                 int x = 0;
                 watch.Restart();
-                for (int i = 0; i < Constants.numOfOpExecutes; i++)
+                for (int i = 0; i < Constants.timesToSearch; i++)
                 {
                     if (list.Contains(rand.Next(numOfElements)))
                     {
@@ -73,25 +66,18 @@ namespace WAMP_A3
             watch.Start();
 
             // Insert
-            for (int k = 0; k < Constants.timesToInsert; k++)
+            for (int i = 0; i < numOfElements; i++)
             {
-                list.Clear();
-                watch.Restart();
-                for (int i = 0; i < numOfElements; i++)
-                {
-                    list.Add(i);
-                }
-                times[(int)Constants.TestTypes.Insert, k] = watch.Elapsed.TotalMilliseconds;
-
+                list.Add(i);
             }
 
 
             // Access
-            for (int k = 0; k < Constants.timesToAccess; k++)
+            for (int k = 0; k < Constants.sampleSize; k++)
             {
                 int x = 0;
                 watch.Restart();
-                for (int i = 0; i < Constants.numOfOpExecutes; i++)
+                for (int i = 0; i < Constants.timesToAccess; i++)
                 {
                     x = (int)list[rand.Next(numOfElements)];
                 }
@@ -100,11 +86,11 @@ namespace WAMP_A3
 
 
             // Search
-            for (int k = 0; k < Constants.timesToSearch; k++)
+            for (int k = 0; k < Constants.sampleSize; k++)
             {
                 int x = 0;
                 watch.Restart();
-                for (int i = 0; i < Constants.numOfOpExecutes; i++)
+                for (int i = 0; i < Constants.timesToSearch; i++)
                 {
                     if (list.Contains(rand.Next(numOfElements)))
                     {
@@ -123,25 +109,18 @@ namespace WAMP_A3
 
 
             // Insert
-            for (int k = 0; k < Constants.timesToInsert; k++)
+            for (int i = 0; i < numOfElements; i++)
             {
-                list.Clear();
-                watch.Restart();
-                for (int i = 0; i < numOfElements; i++)
-                {
-                    list.Add(i, i);
-                }
-                times[(int)Constants.TestTypes.Insert, k] = watch.Elapsed.TotalMilliseconds;
-
+                list.Add(i, i);
             }
 
 
             // Access
-            for (int k = 0; k < Constants.timesToAccess; k++)
+            for (int k = 0; k < Constants.sampleSize; k++)
             {
                 int x = 0;
                 watch.Restart();
-                for (int i = 0; i < Constants.numOfOpExecutes; i++)
+                for (int i = 0; i < Constants.timesToAccess; i++)
                 {
                     x = list[rand.Next(numOfElements)];
                 }
@@ -150,11 +129,11 @@ namespace WAMP_A3
 
 
             // Search
-            for (int k = 0; k < Constants.timesToSearch; k++)
+            for (int k = 0; k < Constants.sampleSize; k++)
             {
                 int x = 0;
                 watch.Restart();
-                for (int i = 0; i < Constants.numOfOpExecutes; i++)
+                for (int i = 0; i < Constants.timesToSearch; i++)
                 {
                     if (list.ContainsValue(rand.Next(numOfElements)))
                     {
@@ -171,25 +150,18 @@ namespace WAMP_A3
             watch.Start();
 
             // Insert
-            for (int k = 0; k < Constants.timesToInsert; k++)
+            for (int i = 0; i < numOfElements; i++)
             {
-                list.Clear();
-                watch.Restart();
-                for (int i = 0; i < numOfElements; i++)
-                {
-                    list.Add(i, i);
-                }
-                times[(int)Constants.TestTypes.Insert, k] = watch.Elapsed.TotalMilliseconds;
-
+                list.Add(i, i);
             }
 
 
             // Access
-            for (int k = 0; k < Constants.timesToAccess; k++)
+            for (int k = 0; k < Constants.sampleSize; k++)
             {
                 int x = 0;
                 watch.Restart();
-                for (int i = 0; i < Constants.numOfOpExecutes; i++)
+                for (int i = 0; i < Constants.timesToAccess; i++)
                 {
                     x = (int)list[rand.Next(numOfElements)];
                 }
@@ -198,11 +170,11 @@ namespace WAMP_A3
 
 
             // Search
-            for (int k = 0; k < Constants.timesToSearch; k++)
+            for (int k = 0; k < Constants.sampleSize; k++)
             {
                 int x = 0;
                 watch.Restart();
-                for (int i = 0; i < Constants.numOfOpExecutes; i++)
+                for (int i = 0; i < Constants.timesToSearch; i++)
                 {
                     if (list.ContainsValue(rand.Next(numOfElements)))
                     {
@@ -217,12 +189,12 @@ namespace WAMP_A3
         {
             double average = 0.0;
 
-            for (int i = 0; i < Constants.numOfTests; i++)
+            for (int i = 0; i < Constants.sampleSize; i++)
             {
                 average += times[testType, i];
             }
 
-            return average/Constants.numOfTests;
+            return average/Constants.sampleSize;
         }
     }
 }
