@@ -19,8 +19,12 @@ namespace WAMP_A3
             double[,] searchGraph = new double[Constants.numOfCollections, Constants.numOfDataPoints];
             double[,] accessGraph = new double[Constants.numOfCollections, Constants.numOfDataPoints];
 
-            for (int i = Constants.test; i < Constants.numOfDataPoints; i++)
+
+            // List
+            // This section is responsible for running tests on the List collection
+            for (int i = 0; i < Constants.numOfDataPoints; i++)
             {
+                // Create a 2D array that will store all the times for each sample set, for each test type
                 double[,] listResults = new double[Constants.typesOfTests, Constants.sampleSize];
                 
                 ContentGenerators.listTimes(ref listResults, Constants.varyingElementCount[i]);
@@ -28,8 +32,10 @@ namespace WAMP_A3
                 accessGraph[(int)Constants.SetTypes.List, i] = ContentGenerators.getAverage(listResults, (int)Constants.TestTypes.Access);
                 DisplayTimes.showTimes(listResults, "List", i);
             }
-            
-          
+
+
+            // Array List
+            // This section is responsible for running tests on the Array List collection
             for (int i = 0; i < Constants.numOfDataPoints; i++)
             {
                 double[,] arrayListResults = new double[Constants.typesOfTests, Constants.sampleSize];
@@ -41,7 +47,8 @@ namespace WAMP_A3
             }
 
 
-
+            // Dictionary
+            // This section is responsible for running tests on the Dictionary collection
             for (int i = 0; i < Constants.numOfDataPoints; i++)
             {
                 double[,] dictionaryResults = new double[Constants.typesOfTests, Constants.sampleSize];
@@ -53,6 +60,8 @@ namespace WAMP_A3
             }
 
 
+            // Hash Table
+            // This section is responsible for running tests on the Hash Table collection
             for (int i = 0; i < Constants.numOfDataPoints; i++)
             {
                 double[,] hashTableResults = new double[Constants.typesOfTests, Constants.sampleSize];
@@ -63,8 +72,11 @@ namespace WAMP_A3
                 DisplayTimes.showTimes(hashTableResults, "Hashtable", i);
             }
 
+            // Creates graphs of the search and access timed results
             GraphingData.charting(searchGraph, Constants.timesToSearch.ToString() + " Searches");
             GraphingData.charting(accessGraph, Constants.timesToAccess.ToString() + " Accesses");
+
+            // Creates log scaled graphs of the search and access timed results
             GraphingData.charting(searchGraph, Constants.timesToSearch.ToString() + " Searches", true);
             GraphingData.charting(accessGraph, Constants.timesToAccess.ToString() + " Accesses", true);
 

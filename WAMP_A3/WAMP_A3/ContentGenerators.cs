@@ -53,7 +53,7 @@ namespace WAMP_A3
                 {
                     if (list.Contains(rand.Next(numOfElements)))
                     {
-                        x = list[rand.Next(numOfElements)];
+                        //x = list[rand.Next(numOfElements)];
                     }
                 }
                 times[(int)Constants.TestTypes.Search, k] = watch.Elapsed.TotalMilliseconds;
