@@ -15,7 +15,7 @@ namespace WAMP_A3
         static public int numOfCollections  = 4;    // The number of different collection types
         static public int typesOfTests      = 3;    // The number of different operations being tested
         static public int sampleSize        = 100;   // The number of search or access sets that will be used in the average
-        static public int numOfDataPoints   = 6;    // The number of points in the graph
+        static public int numOfDataPoints   = 7;    // The number of points in the graph
         static public int timesToAccess     = 10000;
         static public int timesToSearch     = 100;
         static public bool displayStats     = false; 
@@ -47,7 +47,8 @@ namespace WAMP_A3
             100,
             1000,
             10000,
-            100000
+            100000,
+            1000000
         };
     }
 }
