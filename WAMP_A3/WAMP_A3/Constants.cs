@@ -12,13 +12,13 @@ namespace WAMP_A3
 {
     class Constants
     {
-        static public int numOfCollections  = 4;    // The number of different collection types
-        static public int typesOfTests      = 3;    // The number of different operations being tested
-        static public int sampleSize        = 100;   // The number of search or access sets that will be used in the average
-        static public int numOfDataPoints   = 7;    // The number of points in the graph
-        static public int timesToAccess     = 10000;
-        static public int timesToSearch     = 100;
-        static public bool displayStats     = false; 
+        static public int numOfCollections  = 4;        // The number of different collection types
+        static public int typesOfTests      = 3;        // The number of different operations being tested
+        static public int sampleSize        = 100;      // The number of search or access sets that will be used in the average
+        static public int numOfDataPoints   = 7;        // The number of points in the graph
+        static public int timesToAccess     = 10000;    // Number of accesses executed in each test
+        static public int timesToSearch     = 100;      // Number of searches executed in each test
+        static public bool displayStats     = false;    // Indicates whether or not the raw data is dumped to the screen or not
 
 
         // An enumerated list of the types of tests

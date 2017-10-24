@@ -15,7 +15,7 @@ namespace WAMP_A3
 {
     class GraphingData
     {
-        /**
+        /***
         * \brief Creates charts based off input data
         *
         * <b>Description</b><br>

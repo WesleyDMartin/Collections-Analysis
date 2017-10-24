@@ -15,9 +15,29 @@ using System.Diagnostics;
 
 namespace WAMP_A3
 {
+    // For all four of these classes, to enable the access within the search, simply
+    // uncomment the "x = " line inside the search line.
     class ContentGenerators
     {
         static public Random rand = new Random();
+
+
+        /**
+        * \brief Runs a number of tests on a List collection type.
+        *
+        * <b>Description</b><br>
+        * Based off of the controlling numbers in the constants file, this function
+        * accepts a 2D array and fills it with data. This function acts on a List collection,
+        * executing searches and accesses on that collection.
+        * 
+        * Access: The access test uses a direct index access
+        * Search: The search uses the Contains function, with the option to have an access test time as well
+        * 
+        * <b>Details</b>
+        *
+        * \param					<b>double[,] times</b>	        - The 2D array that will store all the timed results
+        * \param					<b>int numOfElements</b>	    - The number of elements for the particular test in question
+        */
         static public void listTimes(ref double[,] times, int numOfElements)
         {
             Stopwatch watch = new Stopwatch();  // Used to track all times in tests
@@ -59,6 +79,23 @@ namespace WAMP_A3
                 times[(int)Constants.TestTypes.Search, k] = watch.Elapsed.TotalMilliseconds;
             }
         }
+
+        /**
+        * \brief Runs a number of tests on a Array List collection type.
+        *
+        * <b>Description</b><br>
+        * Based off of the controlling numbers in the constants file, this function
+        * accepts a 2D array and fills it with data. This function acts on a Array List collection,
+        * executing searches and accesses on that collection.
+        * 
+        * Access: The access test uses a direct index access
+        * Search: The search uses the Contains function, with the option to have an access test time as well
+        * 
+        * <b>Details</b>
+        *
+        * \param					<b>double[,] times</b>	        - The 2D array that will store all the timed results
+        * \param					<b>int numOfElements</b>	    - The number of elements for the particular test in question
+        */
         static public void arrayListTimes(ref double[,] times, int numOfElements)
         {
             Stopwatch watch = new Stopwatch();  // Used to track all times in tests
@@ -101,6 +138,23 @@ namespace WAMP_A3
                 times[(int)Constants.TestTypes.Search, k] = watch.Elapsed.TotalMilliseconds;
             }
         }
+
+        /**
+        * \brief Runs a number of tests on a Dictionary collection type.
+        *
+        * <b>Description</b><br>
+        * Based off of the controlling numbers in the constants file, this function
+        * accepts a 2D array and fills it with data. This function acts on a Dictionary collection,
+        * executing searches and accesses on that collection.
+        * 
+        * Access: The access test uses a direct index access
+        * Search: The search uses the Contains Value function, with the option to have an access test time as well
+        * 
+        * <b>Details</b>
+        *
+        * \param					<b>double[,] times</b>	        - The 2D array that will store all the timed results
+        * \param					<b>int numOfElements</b>	    - The number of elements for the particular test in question
+        */
         static public void dictionaryTimes(ref double[,] times, int numOfElements)
         {
             Stopwatch watch = new Stopwatch();  // Used to track all times in tests
@@ -143,6 +197,23 @@ namespace WAMP_A3
                 times[(int)Constants.TestTypes.Search, k] = watch.Elapsed.TotalMilliseconds;
             }
         }
+
+        /**
+        * \brief Runs a number of tests on a Hash Table collection type.
+        *
+        * <b>Description</b><br>
+        * Based off of the controlling numbers in the constants file, this function
+        * accepts a 2D array and fills it with data. This function acts on a Hash Table collection,
+        * executing searches and accesses on that collection. 
+        * 
+        * Access: The access test uses a direct index access
+        * Search: The search uses the Contains Value function, with the option to have an access test time as well
+        * 
+        * <b>Details</b>
+        *
+        * \param					<b>double[,] times</b>	        - The 2D array that will store all the timed results
+        * \param					<b>int numOfElements</b>	    - The number of elements for the particular test in question
+        */
         static public void hashTableTimes(ref double[,] times, int numOfElements)
         {
             Stopwatch watch = new Stopwatch();  // Used to track all times in tests
